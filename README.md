@@ -4,6 +4,44 @@ A comprehensive business formation platform for deaf entrepreneurs, providing to
 
 ![360 Business Magician](https://business.360magicians.com)
 
+## 🏗️ Project Structure
+
+The project is organized into a clean, modular structure:
+
+```
+├── src/                         # Reorganized source code
+│   ├── api/                     # API layer
+│   │   └── v1/                  # API version 1
+│   │       ├── routes/          # API route handlers
+│   │       │   ├── health.ts    # Health check endpoints
+│   │       │   ├── business.ts  # Business Magician endpoints
+│   │       │   ├── v4deaf.ts    # V4Deaf endpoints
+│   │       │   ├── pinksync.ts  # PinkSync endpoints
+│   │       │   └── automation.ts # PinkFlow automation endpoints
+│   │       └── index.ts         # API router entry point
+│   ├── modules/                 # Feature modules
+│   │   ├── v4deaf/              # VR4Deaf module (VR counselor integration)
+│   │   ├── business-magician/   # Business formation & analytics
+│   │   ├── pinksync/            # Deaf-first platform transformation
+│   │   └── pinkflow/            # Automation & workflow orchestration
+│   ├── shared/                  # Shared resources
+│   │   ├── types/               # Common type definitions
+│   │   ├── utils/               # Utility functions
+│   │   └── config/              # Configuration management
+│   └── index.ts                 # Main entry point
+├── client/                      # Frontend React application (APP)
+│   └── src/
+│       ├── components/          # UI components
+│       ├── hooks/               # Custom React hooks
+│       ├── lib/                 # Utilities and API clients
+│       └── pages/               # Page components
+├── server/                      # Legacy server (being migrated)
+│   ├── routes/                  # API routes
+│   └── services/                # Business logic
+└── shared/                      # Legacy shared code
+    └── schema.ts                # Database schema definitions
+```
+
 ## 🚀 Features
 
 - **Complete Business Lifecycle Support**: From idea generation to business growth and management
@@ -13,6 +51,36 @@ A comprehensive business formation platform for deaf entrepreneurs, providing to
 - **VR Counselor Integration**: Connect with Vocational Rehabilitation specialists
 - **SBA Resource Library**: Access to Small Business Administration resources
 - **AI-Powered Tools**: Tools for business ideation and planning
+
+## 📦 Modules
+
+### Business Magician
+Business formation and management services including:
+- Business idea generation
+- Formation (LLC, Corporation, etc.)
+- Market analytics
+- Lifecycle phase tracking
+
+### V4Deaf (VR4Deaf)
+VR counselor integration and accessibility services:
+- VR counselor connections
+- ASL dictionary and videos
+- Accommodation management
+- Progress tracking
+
+### PinkSync
+Deaf-first platform transformation:
+- Platform accessibility analysis
+- Deaf-first module installation
+- Communication preferences
+- Real-time captioning
+
+### PinkFlow
+Automation and workflow orchestration:
+- Workflow management
+- Event processing
+- Integration hub
+- Sync operations
 
 ## 🔧 Technologies
 
@@ -79,21 +147,42 @@ PORT=5000
 
 ## 📂 Project Structure
 
-```
-├── client/                  # Frontend React application
-│   ├── src/
-│   │   ├── components/      # UI components
-│   │   ├── hooks/           # Custom React hooks
-│   │   ├── lib/             # Utilities and API clients
-│   │   ├── pages/           # Page components
-├── server/                  # Backend Express application
-│   ├── routes/              # API routes
-│   ├── services/            # Business logic
-│   ├── index.ts             # Server entry point
-├── shared/                  # Shared code between client and server
-│   ├── schema.ts            # Database schema definitions
-├── scripts/                 # Utility scripts
-```
+See the structure at the top of this document for the complete directory layout.
+
+## 🔌 API Endpoints
+
+### Health & Status
+- `GET /api/v1/health` - Basic health check
+- `GET /api/v1/health/detailed` - Detailed health with service status
+
+### Business Magician
+- `GET /api/v1/business/formations` - List formations
+- `POST /api/v1/business/formations` - Create business formation
+- `GET /api/v1/business/analytics` - Get analytics
+- `POST /api/v1/business/analytics/analyze` - Analyze business
+- `GET /api/v1/business/lifecycle` - Get lifecycle phases
+- `GET /api/v1/business/tools` - List available tools
+
+### V4Deaf (VR4Deaf)
+- `GET /api/v1/v4deaf/counselors` - List VR counselors
+- `GET /api/v1/v4deaf/asl/dictionary` - Get ASL dictionary
+- `GET /api/v1/v4deaf/asl/videos` - Get ASL videos
+- `POST /api/v1/v4deaf/accommodations/request` - Request accommodation
+- `GET /api/v1/v4deaf/users/:userId/progress` - Get user progress
+
+### PinkSync
+- `GET /api/v1/pinksync/status` - Service status
+- `POST /api/v1/pinksync/analyze` - Analyze platform accessibility
+- `POST /api/v1/pinksync/transform` - Transform platform
+- `GET /api/v1/pinksync/modules` - List available modules
+- `GET /api/v1/pinksync/preferences/:userId` - Get user preferences
+
+### Automation (PinkFlow)
+- `GET /api/v1/automation/workflows` - List workflows
+- `POST /api/v1/automation/workflows` - Create workflow
+- `POST /api/v1/automation/workflows/:id/start` - Start workflow
+- `POST /api/v1/automation/sync/business-vr` - Sync business-VR data
+- `GET /api/v1/automation/integrations` - List integrations
 
 ## 🔄 Database Management
 
