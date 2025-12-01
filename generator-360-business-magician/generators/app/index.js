@@ -188,7 +188,7 @@ module.exports = class extends Generator {
       this.log('4. Run "npm run db:push" to set up your database');
     }
     
-    this.log('\n📚 Documentation: https://github.com/pinkycollie/vr4deaf/tree/main/business');
+    this.log('\n📚 Documentation: https://businessmagician.vr4deaf.org');
     this.log('💬 Support: team@pinksync.com');
   }
 };

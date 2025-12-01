@@ -2,7 +2,7 @@
 
 A comprehensive business formation platform for deaf entrepreneurs, providing tools for business development, document management, and self-employment services.
 
-![360 Business Magician](https://business.360magicians.com)
+![360 Business Magician](https://businessmagician.vr4deaf.org)
 
 ## 🚀 Features
 
