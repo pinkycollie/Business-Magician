@@ -331,7 +331,7 @@ Optional WebSocket integration for:
 
 ## Support
 
-- **Documentation**: [GitHub Repository](https://github.com/pinkycollie/vr4deaf)
+- **Documentation**: [GitHub Repository](https://github.com/pinkycollie/vr4deaf/tree/main/business)
 - **Issues**: [GitHub Issues](https://github.com/pinkycollie/vr4deaf/issues)
 - **Email**: team@pinksync.com
 
