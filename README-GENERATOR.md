@@ -331,8 +331,8 @@ Optional WebSocket integration for:
 
 ## Support
 
-- **Documentation**: [GitHub Repository](https://github.com/pinksync/360-business-magician)
-- **Issues**: [GitHub Issues](https://github.com/pinksync/360-business-magician/issues)
+- **Documentation**: [GitHub Repository](https://github.com/pinkycollie/vr4deaf)
+- **Issues**: [GitHub Issues](https://github.com/pinkycollie/vr4deaf/issues)
 - **Email**: team@pinksync.com
 
 ## License
