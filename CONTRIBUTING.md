@@ -1,6 +1,6 @@
-# Contributing to 360 Business Magician
+# Contributing to 360 Business Magician - VR4Deaf Platform
 
-Thank you for considering contributing to 360 Business Magician! This document provides guidelines and instructions for contributing to this project.
+Thank you for considering contributing to 360 Business Magician! This document provides guidelines and instructions for contributing to the VR4Deaf platform.
 
 ## Table of Contents
 
@@ -14,14 +14,16 @@ Thank you for considering contributing to 360 Business Magician! This document p
 
 ## Project Overview
 
-360 Business Magician is a comprehensive platform designed to support deaf entrepreneurs through the complete business lifecycle. The platform features:
+360 Business Magician is part of the VR4Deaf ecosystem ([vr4deaf.org](https://vr4deaf.org)), a comprehensive platform designed to support deaf entrepreneurs and job seekers through vocational rehabilitation services. The platform features:
 
 - Business formation and planning tools
 - Document management
 - ASL video guidance
-- VR counselor integration
+- VR counselor integration through VR4Deaf network
 - SBA resource library
 - Interactive lifecycle navigation
+- mbtq.dev protocol integration (DeafAuth, PinkSync, FibonRose)
+- Four specialized magician AI agents (Business, Job, Developer, Creative)
 
 ## Development Environment Setup
 
@@ -35,8 +37,8 @@ Thank you for considering contributing to 360 Business Magician! This document p
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-organization/360-business-magician.git
-   cd 360-business-magician
+   git clone https://github.com/vr4deaf/Business_Magician_-Express.git
+   cd Business_Magician_-Express
    ```
 
 2. Run the setup script:
@@ -130,7 +132,12 @@ The project is set up with GitHub Actions for CI/CD:
 
 ## Additional Resources
 
+- [VR4Deaf Platform](https://vr4deaf.org)
+- [VR4Deaf GitHub](https://github.com/vr4deaf)
+- [MBTQ Protocol Documentation](https://mbtq.dev)
 - [React Documentation](https://react.dev/)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [Drizzle ORM Documentation](https://orm.drizzle.team/docs/overview)
 - [Vercel Documentation](https://vercel.com/docs)
+- [AWS Documentation](https://aws.amazon.com/documentation/)
+- [Firebase Documentation](https://firebase.google.com/docs)
