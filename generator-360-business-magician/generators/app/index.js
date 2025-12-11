@@ -191,6 +191,6 @@ module.exports = class extends Generator {
     this.log('\n📚 Documentation: https://github.com/vr4deaf/Business_Magician_-Express');
     this.log('🌐 VR4Deaf Platform: https://vr4deaf.org');
     this.log('🤖 VR4Deaf Bot: https://t.me/vr4deaf_bot');
-    this.log('💬 Support: team@pinksync.com');
+    this.log('💬 Support: tech@vr4deaf.org');
   }
 };
