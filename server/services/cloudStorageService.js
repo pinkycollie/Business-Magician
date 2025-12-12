@@ -7,7 +7,7 @@ import { Storage } from '@google-cloud/storage';
 
 // Bucket names
 const DATA_BUCKET = 'business-magician-api-data';
-const ASSETS_BUCKET = 'business-magician-api-vercel-assets';
+const ASSETS_BUCKET = 'business-magician-api-assets';
 
 // Initialize storage with lazy loading
 let storage = null;

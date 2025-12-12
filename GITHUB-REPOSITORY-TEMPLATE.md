@@ -59,7 +59,6 @@
 ├── plopfile.js
 ├── docker-compose.yml
 ├── Dockerfile
-├── vercel.json
 └── README.md
 ```
 
@@ -88,10 +87,6 @@ GCP_SERVICE_ACCOUNT_KEY=path/to/service-account.json
 # VR Services
 VR_SPECIALIST_DATABASE_URL=your-vr-db-url
 MBTQ_INSURANCE_API_KEY=your-insurance-key
-
-# Deployment
-REPLIT_TOKEN=your-replit-token
-VERCEL_TOKEN=your-vercel-token
 ```
 
 ### Automated Deployment Pipeline
@@ -160,42 +155,30 @@ jobs:
         name: dist
         path: dist/
 
-  deploy-replit:
+  deploy-github-pages:
     needs: build
     runs-on: ubuntu-latest
-    environment: production
+    environment: 
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
     - uses: actions/checkout@v4
     
-    - name: Download build artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: dist
-        path: dist/
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
     
-    - name: Deploy to Replit
-      env:
-        REPLIT_TOKEN: ${{ secrets.REPLIT_TOKEN }}
-      run: |
-        # Replit deployment commands
-        curl -X POST "https://replit.com/api/deployments" \
-          -H "Authorization: Bearer $REPLIT_TOKEN" \
-          -H "Content-Type: application/json" \
-          -d '{"source": "github"}'
-
-  deploy-vercel:
-    needs: build
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Deploy to Vercel
-      uses: vercel/action@v1
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        path: './docs'
+    
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
 ```
 
 ### Database Schema Integration
@@ -348,12 +331,14 @@ volumes:
 
 ### Cost Optimization Strategy
 
-**GCP + Vercel Free Tier Maximization:**
-- Frontend hosting on Vercel (unlimited static hosting)
-- Backend on GCP Cloud Run (2M requests/month free)
-- Database on GCP Firestore (1GB storage free)
-- AI processing via GCP AI APIs (limited free usage)
-- File storage on GCP Cloud Storage (5GB free)
+### Deployment Options
+
+**Flexible Deployment Architecture:**
+- Frontend demo on GitHub Pages (static hosting)
+- Backend API: Docker containers (self-hosted or cloud)
+- Database: PostgreSQL (local, Docker, or Neon serverless)
+- Optional: GCP Cloud Storage for assets
+- Optional: AI services integration (Anthropic, OpenAI)
 
 ### Documentation Structure
 
