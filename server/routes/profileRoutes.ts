@@ -116,12 +116,12 @@ router.post('/:username/generate-onelink', (req, res) => {
       return res.status(404).json({ error: 'Profile not found' });
     }
     
-    // In a real implementation, this would integrate with Vercel's API
+    // In a real implementation, this would integrate with a custom domain or GitHub Pages
     // For now, just return a mock response
     res.json({
       success: true,
       onelink: {
-        url: `https://360magicians.vercel.app/${username}`,
+        url: `https://pinkycollie.github.io/Business_Magician_-Express/${username}`,
         created: new Date().toISOString()
       }
     });
