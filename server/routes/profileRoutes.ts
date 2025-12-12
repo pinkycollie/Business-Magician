@@ -116,12 +116,14 @@ router.post('/:username/generate-onelink', (req, res) => {
       return res.status(404).json({ error: 'Profile not found' });
     }
     
-    // In a real implementation, this would integrate with a custom domain or GitHub Pages
-    // For now, just return a mock response
+    // TODO: In a real implementation, this would integrate with a custom domain
+    // or dynamic profile pages. For now, this is a mock response.
+    // The URL structure shown here would require client-side routing or
+    // a static site generator to properly resolve username-based paths.
     res.json({
       success: true,
       onelink: {
-        url: `https://pinkycollie.github.io/Business_Magician_-Express/${username}`,
+        url: `https://example.com/profiles/${username}`, // Placeholder URL
         created: new Date().toISOString()
       }
     });
