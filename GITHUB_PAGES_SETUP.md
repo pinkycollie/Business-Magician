@@ -13,7 +13,7 @@ To complete the GitHub Pages setup, follow these steps:
 
 ### Step 1: Enable GitHub Pages in Repository Settings
 
-1. Go to your repository on GitHub: https://github.com/pinkycollie/Business_Magician_-Express
+1. Go to your repository on GitHub: https://github.com/pinkycollie/Business-Magician
 2. Click on **Settings** (repository settings, not account settings)
 3. In the left sidebar, click on **Pages** (under "Code and automation")
 4. Under **Build and deployment**:
@@ -31,7 +31,7 @@ git push origin main
 ```
 
 **Option B: Manual workflow dispatch**
-1. Go to Actions tab: https://github.com/pinkycollie/Business_Magician_-Express/actions
+1. Go to Actions tab: https://github.com/pinkycollie/Business-Magician/actions
 2. Click on "Deploy GitHub Pages" workflow
 3. Click "Run workflow" button
 4. Select the `main` branch
@@ -41,7 +41,7 @@ git push origin main
 
 After the workflow completes successfully:
 1. Check the Actions tab to see the successful deployment
-2. Visit your GitHub Pages site: https://pinkycollie.github.io/Business_Magician_-Express/
+2. Visit your GitHub Pages site: https://github.com/pinkycollie/Business-Magician/
 3. The interactive demo page should be live!
 
 ## Troubleshooting

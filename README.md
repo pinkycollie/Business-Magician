@@ -2,11 +2,11 @@
 
 A comprehensive business formation platform for deaf entrepreneurs, providing tools for business development, document management, and self-employment services.
 
-[![CI/CD](https://github.com/pinkycollie/Business_Magician_-Express/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/pinkycollie/Business_Magician_-Express/actions/workflows/ci-cd.yml)
+[![CI/CD](https://github.com/pinkycollie/Business-Magician/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/pinkycollie/Business-Magician/actions/workflows/ci-cd.yml)
 
 ## 📖 Documentation & Demo
 
-**[View Interactive Demo →](https://pinkycollie.github.io/Business_Magician_-Express/)**
+**[View Interactive Demo →](https://pinkycollie.github.io/Business-Magician/)**
 
 The demo page provides an interactive overview of the platform features, including:
 - Blueprint Generator demonstration
@@ -45,8 +45,8 @@ The demo page provides an interactive overview of the platform features, includi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/pinkycollie/Business_Magician_-Express.git
-   cd Business_Magician_-Express
+   git clone https://github.com/pinkycollie/Business-Magician.git
+   cd Business-Magician
    ```
 
 2. Install dependencies:
