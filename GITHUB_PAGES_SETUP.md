@@ -41,7 +41,7 @@ git push origin main
 
 After the workflow completes successfully:
 1. Check the Actions tab to see the successful deployment
-2. Visit your GitHub Pages site: https://github.com/pinkycollie/Business-Magician/
+2. Visit your GitHub Pages site: https://pinkycollie.github.io/Business-Magician/
 3. The interactive demo page should be live!
 
 ## Troubleshooting
