@@ -35,8 +35,8 @@ Thank you for considering contributing to 360 Business Magician! This document p
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-organization/360-business-magician.git
-   cd 360-business-magician
+   git clone https://github.com/pinkycollie/vr4deaf.git
+   cd vr4deaf/businessmagician
    ```
 
 2. Run the setup script:

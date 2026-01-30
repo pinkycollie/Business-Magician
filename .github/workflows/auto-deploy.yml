@@ -1,4 +1,4 @@
-name: Auto Deploy 360 Business Magician
+name: 360 Business Magician CI/CD
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 
 env:
   NODE_VERSION: '20'
-  REPLIT_DEPLOYMENT: true
 
 jobs:
   test:
@@ -72,15 +71,16 @@ jobs:
         name: build-files
         path: dist/
     
-    - name: Deploy to Replit Staging
+    - name: Deploy to Staging (nginx)
       env:
-        REPLIT_TOKEN: ${{ secrets.REPLIT_TOKEN }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        STAGING_HOST: ${{ secrets.STAGING_HOST }}
         DATABASE_URL: ${{ secrets.STAGING_DATABASE_URL }}
         ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
       run: |
-        echo "Deploying to staging environment..."
-        # Add Replit deployment commands here
+        echo "Deploying to staging environment on vr4deaf.org..."
+        # Deploy to nginx staging server
 
   deploy-production:
     if: github.ref == 'refs/heads/main'
@@ -96,13 +96,14 @@ jobs:
         name: build-files
         path: dist/
     
-    - name: Deploy to Replit Production
+    - name: Deploy to Production (nginx)
       env:
-        REPLIT_TOKEN: ${{ secrets.REPLIT_TOKEN }}
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        PRODUCTION_HOST: ${{ secrets.PRODUCTION_HOST }}
         DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
         ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
         NORTHWEST_API_KEY: ${{ secrets.NORTHWEST_API_KEY }}
       run: |
-        echo "Deploying to production environment..."
-        # Add Replit deployment commands here
+        echo "Deploying to production at businessmagician.vr4deaf.org..."
+        # Deploy to nginx production server

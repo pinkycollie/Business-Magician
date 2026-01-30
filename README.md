@@ -1,8 +1,11 @@
-# 360 Business Magician: VR Business Specialist + VR Client
+# 360 Business Magician
 
-A comprehensive business formation platform for deaf entrepreneurs, providing tools for business development, document management, and self-employment services.
+> **Author**: Pinky Collie  
+> **Organization**: 360 Magicians  
+> **Platform**: [businessmagician.vr4deaf.org](https://businessmagician.vr4deaf.org)  
+> **Monorepo**: [github.com/pinkycollie/vr4deaf](https://github.com/pinkycollie/vr4deaf) → `/businessmagician`
 
-![360 Business Magician](https://business.360magicians.com)
+A comprehensive AI-powered business formation platform for deaf entrepreneurs, providing complete business lifecycle support with Vocational Rehabilitation integration and ADA compliance.
 
 ## 🏗️ Project Structure
 
@@ -44,13 +47,7 @@ The project is organized into a clean, modular structure:
 
 ## 🚀 Features
 
-- **Complete Business Lifecycle Support**: From idea generation to business growth and management
-- **ASL Video Guidance**: Accessible content in American Sign Language
-- **Document Management**: Storage and organization for business documents
-- **Self-Employment Service Modules**: Comprehensive pricing tools
-- **VR Counselor Integration**: Connect with Vocational Rehabilitation specialists
-- **SBA Resource Library**: Access to Small Business Administration resources
-- **AI-Powered Tools**: Tools for business ideation and planning
+This module is part of the **VR4Deaf monorepo**:
 
 ## 📦 Modules
 
@@ -62,7 +59,7 @@ Business formation and management services including:
 - Lifecycle phase tracking
 
 ### V4Deaf (VR4Deaf)
-VR counselor integration and accessibility services:
+VR Specialists integration and accessibility services:
 - VR counselor connections
 - ASL dictionary and videos
 - Accommodation management
@@ -84,39 +81,101 @@ Automation and workflow orchestration:
 
 ## 🔧 Technologies
 
-- React + TypeScript frontend
-- Express.js backend
-- PostgreSQL database with Drizzle ORM
-- HTMX for dynamic interactions
-- Google Cloud Storage integration
-- Telegram bot integration
-- Shadcn/UI components
-- Vercel deployment
+## 🎯 Overview
 
-## 📋 Requirements
+Business Magician is part of the **360 Magicians** ecosystem - a suite of AI agents designed to empower the deaf community. This platform guides deaf entrepreneurs through the complete business journey:
 
+```
+💡 IDEA  →  🏗️ BUILD  →  📈 GROW  →  ⚙️ MANAGED
+```
+
+### What Makes Us Different
+
+- **Deaf-First Design**: Visual communication, ASL integration, and deaf culture awareness
+- **VR Integration**: Deep integration with Vocational Rehabilitation self-employment programs
+- **ADA Compliance**: Built-in accessibility and compliance checking
+- **AI-Powered**: Intelligent guidance through every business phase
+- **Web3 Ready**: Prepared for decentralized identity and blockchain integration
+
+## 🚀 Features
+
+### Business Lifecycle Support
+
+| Phase | Features |
+|-------|----------|
+| **💡 IDEA** | Business ideation, market research, feasibility studies, VR counselor tools |
+| **🏗️ BUILD** | Entity formation, EIN application, licensing, compliance checklists |
+| **📈 GROW** | Marketing strategy, customer acquisition, financial tracking, scaling |
+| **⚙️ MANAGED** | Compliance monitoring, renewals, business health dashboards |
+
+### Platform Capabilities
+
+- ✅ 360-degree interactive business journey
+- ✅ Corporate formation services with pricing
+- ✅ Butch AI assistant with ASL integration
+- ✅ Team collaboration tools
+- ✅ Admin dashboard with analytics
+- ✅ Small Business API integration
+- ✅ Real-time WebSocket communication
+- ✅ Automated code generation system
+
+### Accessibility Features
+
+- ASL video players with custom controls
+- Screen reader compatibility
+- Keyboard navigation
+- High contrast mode
+- Visual notification systems
+- WCAG 2.1 AA compliance
+
+## 🛠️ Technology Stack
+
+### Current Platform
+- **Frontend**: React 18 + TypeScript + Vite
+- **Backend**: Express.js + Node.js 20+
+- **Database**: PostgreSQL + Drizzle ORM
+- **UI**: Shadcn/UI + Tailwind CSS + HTMX
+- **AI**: Anthropic Claude / OpenAI
+- **Real-time**: Socket.io + WebSocket
+
+### Deployment
+- **Hosting**: nginx on vr4deaf.org
+- **Containers**: Docker + Docker Compose
+- **CI/CD**: GitHub Actions
+- **Storage**: Google Cloud Storage
+
+### Future (Web3 Integration)
+- Multi-chain wallet support
+- Smart contract business registry
+- IPFS document storage
+- Zero-knowledge proofs
+- Layer 2 scaling
+
+## 📋 Quick Start
+
+### Prerequisites
 - Node.js 20+
-- PostgreSQL database (or use Docker)
-- Google Cloud Storage account (for document storage)
-- OpenAI API key (for AI features)
+- PostgreSQL database (or Docker)
+- API keys for AI services
 
-## 🏁 Getting Started
+### Installation
 
-### Quick Start
+```bash
+# Clone the repository
+git clone https://github.com/pinkycollie/vr4deaf.git
+cd vr4deaf/business
 
-1. Clone the repository
-2. Run setup script:
-   ```bash
-   node scripts/setup.js
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+# Install dependencies
+npm install
+
+# Run setup script
+node scripts/setup.js
+
+# Start development server
+npm run dev
+```
 
 ### Docker Setup
-
-We provide a Docker Compose configuration for easy local development:
 
 ```bash
 docker-compose up -d
@@ -124,23 +183,86 @@ docker-compose up -d
 
 Visit http://localhost:8080 to see the application.
 
-## 🗄️ Environment Variables
+## 🔧 Code Generation
 
-Create a `.env` file in the project root with the following variables:
+### Plop Generators
+
+```bash
+# Business component with ASL support
+plop business-component
+
+# Complete business tool
+plop business-tool
+
+# ASL video component
+plop asl-component
+
+# Full-stack feature
+plop feature
+
+# API endpoint with auth
+plop api-endpoint
+```
+
+### Yeoman Generator
+
+```bash
+# Install generator
+npm install -g generator-360-business-magician
+
+# Create new project
+yo 360-business-magician
+```
+
+## 📂 Project Structure
 
 ```
-# Database connection
+360-business-magician/
+├── .github/workflows/          # CI/CD automation
+├── archive/                    # Archived legacy files
+├── client/src/                 # React frontend
+│   ├── components/             # UI components
+│   ├── hooks/                  # Custom React hooks
+│   ├── lib/                    # Utilities and API clients
+│   └── pages/                  # Page components
+├── docs/                       # Documentation
+│   ├── AGENTS.md               # Agent architecture
+│   ├── CONTEXT.md              # Platform context
+│   └── PROMPTS.md              # AI prompts library
+├── generator-360-business-magician/  # Yeoman generator
+├── server/                     # Express backend
+│   ├── routes/                 # API routes
+│   ├── services/               # Business logic
+│   └── index.ts                # Server entry point
+├── shared/                     # Shared code
+│   └── schema.ts               # Database schema
+├── templates/                  # Plop templates
+├── views/                      # HTMX templates
+└── plopfile.js                 # Generator configuration
+```
+
+## 🗄️ Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+# Database
 DATABASE_URL=postgres://username:password@localhost:5432/business_magician
 
-# Google Cloud Storage
+# AI Services
+ANTHROPIC_API_KEY=your-anthropic-key
+OPENAI_API_KEY=your-openai-key
+
+# Google Cloud
 GOOGLE_CLOUD_PROJECT_ID=your-project-id
 GOOGLE_CLOUD_BUCKET_NAME=your-bucket-name
 GOOGLE_APPLICATION_CREDENTIALS=path-to-credentials.json
 
-# OpenAI
-OPENAI_API_KEY=your-openai-api-key
+# External Services
+NOTION_API_KEY=your-notion-key
+NORTHWEST_API_KEY=your-northwest-key
 
-# Application settings
+# Application
 NODE_ENV=development
 PORT=5000
 ```
@@ -186,26 +308,47 @@ See the structure at the top of this document for the complete directory layout.
 
 ## 🔄 Database Management
 
-We use Drizzle ORM for database operations. Some useful commands:
-
 ```bash
-# Push schema changes to database
+# Push schema changes
 npm run db:push
 
-# Generate migration files
+# Generate migrations
 npm run db:generate
 
-# Open Drizzle Studio (database UI)
+# Open Drizzle Studio
 npm run db:studio
 ```
 
-## 📦 Deployment
+## 🚢 Deployment
 
-The application is configured for deployment on Vercel:
+### Production (nginx)
+The application is deployed on nginx at businessmagician.vr4deaf.org
 
+### Docker Deployment
 ```bash
-node scripts/vercel-deploy.js
+docker-compose -f docker-compose.prod.yml up -d
 ```
+
+### GitHub Actions
+Automated deployment on push to main branch via GitHub Actions.
+
+## 🔗 API Integrations
+
+| Service | Purpose |
+|---------|---------|
+| Anthropic AI | Intelligent business guidance |
+| Notion API | Content management |
+| Northwest Agent | Business formation services |
+| SBA API | Small business resources |
+| Stripe | Payment processing |
+
+## 📚 Documentation
+
+- [AGENTS.md](docs/AGENTS.md) - Agent architecture and capabilities
+- [CONTEXT.md](docs/CONTEXT.md) - Platform context and user understanding
+- [PROMPTS.md](docs/PROMPTS.md) - AI prompts library
+- [CONTRIBUTING.md](CONTRIBUTING.md) - Contribution guidelines
+- [README-GENERATOR.md](README-GENERATOR.md) - Code generation documentation
 
 ## 🤝 Contributing
 
@@ -217,4 +360,12 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on contributing to 
 
 ## 👥 Team
 
-- 360 Magician Team
+- **Author**: Pinky Collie
+- **Organization**: 360 Magicians
+- **Platform**: VR4Deaf.org
+
+---
+
+*Business Magician - Empowering Deaf Entrepreneurs*  
+*Part of the 360 Magicians Ecosystem*  
+*© 2024 Pinky Collie & 360 Magicians*

@@ -1,6 +1,14 @@
 {
-  "name": "rest-express",
+  "name": "business-magician",
   "version": "1.0.0",
+  "description": "360 Business Magician - AI-powered business platform for deaf entrepreneurs",
+  "author": "Pinky Collie <pinkycollie@outlook.com>",
+  "homepage": "https://businessmagician.vr4deaf.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pinkycollie/vr4deaf.git",
+    "directory": "businessmagician"
+  },
   "type": "module",
   "license": "MIT",
   "scripts": {
@@ -17,6 +25,16 @@
     "typecheck": "tsc --noEmit",
     "test": "echo 'Add your testing command here'"
   },
+  "keywords": [
+    "business-magician",
+    "360-magicians",
+    "vr4deaf",
+    "deaf-first",
+    "accessibility",
+    "asl",
+    "vocational-rehabilitation",
+    "ai-agent"
+  ],
   "dependencies": {
     "@anthropic-ai/sdk": "^0.37.0",
     "@google-cloud/aiplatform": "^4.1.0",
