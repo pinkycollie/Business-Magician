@@ -333,7 +333,6 @@ volumes:
 
 ### Deployment Options
 
-**Flexible Deployment Architecture:**
 - Frontend demo on GitHub Pages (static hosting)
 - Backend API: Docker containers (self-hosted or cloud)
 - Database: PostgreSQL (local, Docker, or Neon serverless)
