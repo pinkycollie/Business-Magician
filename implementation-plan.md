@@ -47,7 +47,7 @@ Our current architecture consists of:
 1. **Containerized Application**
    - Docker Compose configuration provided
    - Includes application and PostgreSQL database
-   - One-command startup: `docker-compose up -d`
+   - Simple startup with Docker Compose: `docker-compose up -d`
 
 ```Dockerfile
 # Optimized Dockerfile for production deployment
