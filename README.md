@@ -2,7 +2,16 @@
 
 A comprehensive business formation platform for deaf entrepreneurs, providing tools for business development, document management, and self-employment services.
 
-![360 Business Magician](https://business.360magicians.com)
+[![CI/CD](https://github.com/pinkycollie/Business-Magician/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/pinkycollie/Business-Magician/actions/workflows/ci-cd.yml)
+
+## 📖 Documentation & Demo
+
+**[View Interactive Demo →](https://pinkycollie.github.io/Business-Magician/)**
+
+The demo page provides an interactive overview of the platform features, including:
+- Blueprint Generator demonstration
+- VR Service Cost Calculator
+- VR Workflow visualization
 
 ## 🏗️ Project Structure
 
@@ -88,31 +97,43 @@ Automation and workflow orchestration:
 - Express.js backend
 - PostgreSQL database with Drizzle ORM
 - HTMX for dynamic interactions
-- Google Cloud Storage integration
-- Telegram bot integration
+- Google Cloud Storage integration (optional)
 - Shadcn/UI components
-- Vercel deployment
 
 ## 📋 Requirements
 
 - Node.js 20+
 - PostgreSQL database (or use Docker)
-- Google Cloud Storage account (for document storage)
-- OpenAI API key (for AI features)
+- OpenAI API key (for AI features, optional)
+- Notion API key (for integration, optional)
 
 ## 🏁 Getting Started
 
 ### Quick Start
 
-1. Clone the repository
-2. Run setup script:
+1. Clone the repository:
    ```bash
-   node scripts/setup.js
+   git clone https://github.com/pinkycollie/Business-Magician.git
+   cd Business-Magician
    ```
-3. Start the development server:
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Copy environment example and configure:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
+
+4. Start the development server:
    ```bash
    npm run dev
    ```
+
+5. Visit http://localhost:5000 to see the application.
 
 ### Docker Setup
 
@@ -128,17 +149,22 @@ Visit http://localhost:8080 to see the application.
 
 Create a `.env` file in the project root with the following variables:
 
-```
+```env
 # Database connection
 DATABASE_URL=postgres://username:password@localhost:5432/business_magician
 
-# Google Cloud Storage
+# Optional: Google Cloud Storage
 GOOGLE_CLOUD_PROJECT_ID=your-project-id
 GOOGLE_CLOUD_BUCKET_NAME=your-bucket-name
 GOOGLE_APPLICATION_CREDENTIALS=path-to-credentials.json
 
-# OpenAI
+# Optional: AI Services
 OPENAI_API_KEY=your-openai-api-key
+ANTHROPIC_API_KEY=your-anthropic-api-key
+
+# Optional: Notion Integration
+NOTION_API_KEY=your-notion-api-key
+NOTION_DATABASE_ID=your-database-id
 
 # Application settings
 NODE_ENV=development
@@ -147,42 +173,23 @@ PORT=5000
 
 ## 📂 Project Structure
 
-See the structure at the top of this document for the complete directory layout.
-
-## 🔌 API Endpoints
-
-### Health & Status
-- `GET /api/v1/health` - Basic health check
-- `GET /api/v1/health/detailed` - Detailed health with service status
-
-### Business Magician
-- `GET /api/v1/business/formations` - List formations
-- `POST /api/v1/business/formations` - Create business formation
-- `GET /api/v1/business/analytics` - Get analytics
-- `POST /api/v1/business/analytics/analyze` - Analyze business
-- `GET /api/v1/business/lifecycle` - Get lifecycle phases
-- `GET /api/v1/business/tools` - List available tools
-
-### V4Deaf (VR4Deaf)
-- `GET /api/v1/v4deaf/counselors` - List VR counselors
-- `GET /api/v1/v4deaf/asl/dictionary` - Get ASL dictionary
-- `GET /api/v1/v4deaf/asl/videos` - Get ASL videos
-- `POST /api/v1/v4deaf/accommodations/request` - Request accommodation
-- `GET /api/v1/v4deaf/users/:userId/progress` - Get user progress
-
-### PinkSync
-- `GET /api/v1/pinksync/status` - Service status
-- `POST /api/v1/pinksync/analyze` - Analyze platform accessibility
-- `POST /api/v1/pinksync/transform` - Transform platform
-- `GET /api/v1/pinksync/modules` - List available modules
-- `GET /api/v1/pinksync/preferences/:userId` - Get user preferences
-
-### Automation (PinkFlow)
-- `GET /api/v1/automation/workflows` - List workflows
-- `POST /api/v1/automation/workflows` - Create workflow
-- `POST /api/v1/automation/workflows/:id/start` - Start workflow
-- `POST /api/v1/automation/sync/business-vr` - Sync business-VR data
-- `GET /api/v1/automation/integrations` - List integrations
+```
+├── client/                  # Frontend React application
+│   ├── src/
+│   │   ├── components/      # UI components
+│   │   ├── hooks/           # Custom React hooks
+│   │   ├── lib/             # Utilities and API clients
+│   │   └── pages/           # Page components
+├── server/                  # Backend Express application
+│   ├── routes/              # API routes
+│   ├── services/            # Business logic
+│   └── index.ts             # Server entry point
+├── shared/                  # Shared code between client and server
+│   └── schema.ts            # Database schema definitions
+├── docs/                    # GitHub Pages documentation
+├── scripts/                 # Utility scripts
+└── views/                   # HTMX view templates
+```
 
 ## 🔄 Database Management
 
@@ -199,12 +206,33 @@ npm run db:generate
 npm run db:studio
 ```
 
-## 📦 Deployment
+## 📜 Available Scripts
 
-The application is configured for deployment on Vercel:
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run start` | Run production build |
+| `npm run typecheck` | Run TypeScript type checking |
+| `npm run lint` | Run linting |
+| `npm run db:push` | Push schema changes to database |
+| `npm run db:studio` | Open database management UI |
+
+## 🧪 Local Development Tips
+
+### Running Without Database
+
+For quick frontend prototyping, you can run the demo HTML files directly:
 
 ```bash
-node scripts/vercel-deploy.js
+# Open the demo page in your browser
+open 360-magician-demo.html
+```
+
+### Using the Test Server
+
+```bash
+node test-server.js
 ```
 
 ## 🤝 Contributing
