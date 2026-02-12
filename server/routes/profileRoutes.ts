@@ -120,6 +120,8 @@ router.post('/:username/generate-onelink', (req, res) => {
     // or dynamic profile pages. For now, this is a mock response.
     // The URL structure shown here would require client-side routing or
     // a static site generator to properly resolve username-based paths.
+    // NOTE: This endpoint is for demonstration purposes only; there are currently no plans
+    // to implement dynamic username-based profile URLs on the backend.
     res.json({
       success: true,
       onelink: {
