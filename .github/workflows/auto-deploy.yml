@@ -106,4 +106,4 @@ jobs:
         NORTHWEST_API_KEY: ${{ secrets.NORTHWEST_API_KEY }}
       run: |
         echo "Deploying to production at businessmagician.vr4deaf.org..."
-        # Deploy to nginx production server
+        # Deploy to Apache production server
