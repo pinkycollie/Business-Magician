@@ -2,7 +2,7 @@
 
 > **Author**: Pinky Collie  
 > **Organization**: 360 Magicians  
-> **Platform**: VR4Deaf.org
+> **Platform**: 360Magicians.com
 
 ## System Prompts
 
