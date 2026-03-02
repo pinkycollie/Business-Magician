@@ -12,7 +12,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { 
   BarChart, 
   Calendar, 
-  Card as CardIcon, 
+  CreditCard as CardIcon, 
   Clipboard, 
   Clock, 
   Cog, 
@@ -22,7 +22,7 @@ import {
   HandHelping, 
   Landmark, 
   MessageSquare, 
-  MessageSquareCheck, 
+  CheckSquare as MessageSquareCheck, 
   PersonStanding, 
   Phone, 
   Search, 

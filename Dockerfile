@@ -1,5 +1,5 @@
 # Use a lightweight Node.js image
-FROM node:18-slim
+FROM node:20-slim
 
 # Create app directory
 WORKDIR /app
@@ -14,10 +14,13 @@ RUN apt-get update && \
 
 # Install dependencies first (for better layer caching)
 COPY package*.json ./
-RUN npm ci --only=production
+RUN npm ci --legacy-peer-deps
 
 # Copy application code
 COPY . .
+
+# Build the application
+RUN npm run build
 
 # Create directory for uploads if it doesn't exist
 RUN mkdir -p /app/uploads
@@ -34,4 +37,4 @@ RUN chown -R node:node /app
 USER node
 
 # Run the application
-CMD ["node", "api-server-notion.js"]
+CMD ["npm", "start"]
