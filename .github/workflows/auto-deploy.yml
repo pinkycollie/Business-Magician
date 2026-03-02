@@ -71,12 +71,12 @@ jobs:
         name: build-files
         path: dist/
     
-    - name: Deploy to Staging (nginx)
+    - name: Deploy to Staging Github Pages
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         STAGING_HOST: ${{ secrets.STAGING_HOST }}
         DATABASE_URL: ${{ secrets.STAGING_DATABASE_URL }}
-        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        Magician_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
       run: |
         echo "Deploying to staging environment on vr4deaf.org..."
