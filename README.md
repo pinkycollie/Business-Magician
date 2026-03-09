@@ -153,19 +153,6 @@ Create a `.env` file in the project root with the following variables:
 # Database connection
 DATABASE_URL=postgres://username:password@localhost:5432/business_magician
 
-# Optional: Google Cloud Storage
-GOOGLE_CLOUD_PROJECT_ID=your-project-id
-GOOGLE_CLOUD_BUCKET_NAME=your-bucket-name
-GOOGLE_APPLICATION_CREDENTIALS=path-to-credentials.json
-
-# Optional: AI Services
-OPENAI_API_KEY=your-openai-api-key
-ANTHROPIC_API_KEY=your-anthropic-api-key
-
-# Optional: Notion Integration
-NOTION_API_KEY=your-notion-api-key
-NOTION_DATABASE_ID=your-database-id
-
 # Application settings
 NODE_ENV=development
 PORT=5000
