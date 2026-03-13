@@ -66,7 +66,7 @@ router.get('/asl-resources', (req: Request, res: Response) => {
       videos: [
         {
           title: "Introduction to VR Services",
-          url: "https://storage.googleapis.com/business-magician-api-vercel-assets/asl/vr-intro.mp4",
+          url: "https://storage.googleapis.com/business-magician-api-assets/asl/vr-intro.mp4",
           duration: 120
         }
       ]

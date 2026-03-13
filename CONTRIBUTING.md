@@ -115,13 +115,30 @@ We use Drizzle ORM for database operations.
 
 ## Deployment
 
-### Vercel Deployment
+### Local Deployment
 
-1. Configure environment variables in Vercel
-2. Deploy using:
+1. Build the application:
    ```bash
-   node scripts/vercel-deploy.js
+   npm run build
    ```
+
+2. Start the production server:
+   ```bash
+   npm start
+   ```
+
+### Docker Deployment
+
+1. Use Docker Compose for easy deployment:
+   ```bash
+   docker-compose up -d
+   ```
+
+2. Access the application at http://localhost:8080
+
+### GitHub Pages (Documentation)
+
+Documentation and demo pages are automatically deployed to GitHub Pages when changes are pushed to the `docs/` folder on the main branch.
 
 ### Using CI/CD Pipeline
 
@@ -138,6 +155,8 @@ The project is set up with GitHub Actions for CI/CD:
 - [React Documentation](https://react.dev/)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [Drizzle ORM Documentation](https://orm.drizzle.team/docs/overview)
+- [Docker Documentation](https://docs.docker.com/)
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
 - [Vercel Documentation](https://vercel.com/docs)
 - [AWS Documentation](https://aws.amazon.com/documentation/)
 - [Firebase Documentation](https://firebase.google.com/docs)
