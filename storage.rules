@@ -1,0 +1,82 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+             firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    function isVRSpecialist() {
+      return isAuthenticated() && 
+             firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'vr_specialist';
+    }
+    
+    // User profile images
+    match /profiles/{userId}/{allPaths=**} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId) || isAdmin();
+    }
+    
+    // Business documents
+    match /documents/{userId}/{businessId}/{allPaths=**} {
+      allow read: if isOwner(userId) || isVRSpecialist() || isAdmin();
+      allow write: if isOwner(userId) || isVRSpecialist() || isAdmin();
+    }
+    
+    // ASL Videos - processed videos from AWS
+    match /videos/asl/{videoId}/{allPaths=**} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+    
+    // ASL Video thumbnails
+    match /videos/thumbnails/{videoId}/{allPaths=**} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+    
+    // User uploaded videos (for review)
+    match /videos/user-uploads/{userId}/{allPaths=**} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow write: if isOwner(userId);
+    }
+    
+    // Business logos and branding
+    match /business-assets/{businessId}/{allPaths=**} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated();
+    }
+    
+    // VR Case attachments
+    match /vr-cases/{caseId}/{allPaths=**} {
+      allow read: if isAuthenticated() || isVRSpecialist() || isAdmin();
+      allow write: if isVRSpecialist() || isAdmin();
+    }
+    
+    // Temporary uploads (1 hour expiration)
+    match /temp/{userId}/{allPaths=**} {
+      allow read, write: if isOwner(userId) && 
+                            request.time < resource.metadata.uploadedAt + duration.value(1, 'h');
+    }
+    
+    // Public assets (logos, icons, etc.)
+    match /public/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    // Default deny
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

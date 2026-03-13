@@ -43,23 +43,24 @@ const templates: Template[] = [
     description: 'Complete business formation workflow with Northwest Agent integration and ASL guidance',
     category: 'business',
     previewImageUrl: '/business-formation-preview.jpg',
-    demoUrl: 'https://360magicians.com/templates/business-formation',
+    demoUrl: 'https://vr4deaf.org/templates/business-formation',
+    githubUrl: 'https://github.com/vr4deaf/business-formation-toolkit',
     technologies: ['React', 'Express', 'TypeScript', 'Northwest API'],
     featured: true,
     stars: 120,
-    author: '360 Magicians'
+    author: 'VR4Deaf Team'
   },
   {
     id: 'asl-video-platform',
     name: 'ASL Video Learning Platform',
-    description: 'Video-first learning platform with MUX integration, optimized for deaf users',
+    description: 'Video-first learning platform with AWS integration, optimized for deaf users',
     category: 'app',
     previewImageUrl: '/asl-platform-preview.jpg',
-    demoUrl: 'https://360magicians.com/templates/asl-video-platform',
-    githubUrl: 'https://github.com/360magicians/asl-video-platform',
-    technologies: ['React', 'Express', 'MUX', 'TypeScript'],
+    demoUrl: 'https://vr4deaf.org/templates/asl-video-platform',
+    githubUrl: 'https://github.com/vr4deaf/asl-video-platform',
+    technologies: ['React', 'Express', 'AWS MediaConvert', 'TypeScript'],
     stars: 85,
-    author: '360 Magicians'
+    author: 'VR4Deaf Team'
   },
   {
     id: 'deaf-ecommerce',
@@ -67,10 +68,11 @@ const templates: Template[] = [
     description: 'Fully accessible e-commerce template with ASL product videos and visual navigation',
     category: 'ecommerce',
     previewImageUrl: '/deaf-ecommerce-preview.jpg',
-    demoUrl: 'https://360magicians.com/templates/deaf-ecommerce',
+    demoUrl: 'https://vr4deaf.org/templates/deaf-ecommerce',
+    githubUrl: 'https://github.com/vr4deaf/accessible-ecommerce',
     technologies: ['React', 'Stripe', 'TypeScript', 'Tailwind'],
     stars: 67,
-    author: '360 Magicians'
+    author: 'VR4Deaf Team'
   },
   {
     id: 'business-website',
@@ -78,11 +80,12 @@ const templates: Template[] = [
     description: 'Professional business website template with integrated ASL videos and visual communication',
     category: 'website',
     previewImageUrl: '/business-website-preview.jpg',
-    demoUrl: 'https://360magicians.com/templates/business-website',
-    vercelDeployUrl: 'https://vercel.com/new?repository=https://github.com/360magicians/business-website-template',
+    demoUrl: 'https://vr4deaf.org/templates/business-website',
+    githubUrl: 'https://github.com/vr4deaf/business-website-template',
+    vercelDeployUrl: 'https://vercel.com/new?repository=https://github.com/vr4deaf/business-website-template',
     technologies: ['Next.js', 'React', 'TypeScript', 'GSAP'],
     stars: 42,
-    author: '360 Magicians'
+    author: 'VR4Deaf Team'
   }
 ];
 

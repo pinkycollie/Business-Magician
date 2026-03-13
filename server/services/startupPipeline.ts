@@ -42,7 +42,7 @@ export async function generateBusinessTemplate(config: TemplateConfig) {
     success: true,
     message: "Template generated successfully",
     config,
-    repositoryUrl: `https://github.com/360-magician/${config.templateType}-template`,
+    repositoryUrl: `https://github.com/vr4deaf/${config.templateType}-template`,
     deploymentInstructions: [
       "Clone the repository",
       "Update configuration in .env file",

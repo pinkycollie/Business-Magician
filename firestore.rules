@@ -1,0 +1,110 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user owns the resource
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Helper function to check if user is VR specialist
+    function isVRSpecialist() {
+      return isAuthenticated() && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'vr_specialist';
+    }
+    
+    // Helper function to check if user is admin
+    function isAdmin() {
+      return isAuthenticated() && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId) || isAdmin();
+    }
+    
+    // Businesses collection
+    match /businesses/{businessId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update: if isOwner(resource.data.ownerId) || isVRSpecialist() || isAdmin();
+      allow delete: if isOwner(resource.data.ownerId) || isAdmin();
+    }
+    
+    // VR Cases collection
+    match /vr_cases/{caseId} {
+      allow read: if isAuthenticated() && 
+                     (isOwner(resource.data.userId) || isVRSpecialist() || isAdmin());
+      allow create: if isAuthenticated();
+      allow update: if isVRSpecialist() || isAdmin();
+      allow delete: if isAdmin();
+    }
+    
+    // Documents collection
+    match /documents/{documentId} {
+      allow read: if isAuthenticated() && 
+                     (isOwner(resource.data.userId) || isVRSpecialist() || isAdmin());
+      allow write: if isAuthenticated() && 
+                      (isOwner(resource.data.userId) || isVRSpecialist() || isAdmin());
+    }
+    
+    // Interpreter Sessions (PinkSync)
+    match /interpreter_sessions/{sessionId} {
+      allow read: if isAuthenticated() && 
+                     (isOwner(resource.data.userId) || 
+                      request.auth.uid == resource.data.translatorId || 
+                      isAdmin());
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && 
+                       (isOwner(resource.data.userId) || 
+                        request.auth.uid == resource.data.translatorId || 
+                        isAdmin());
+      allow delete: if isOwner(resource.data.userId) || isAdmin();
+    }
+    
+    // Business Analytics (FibonRose)
+    match /business_analytics/{analyticsId} {
+      allow read: if isAuthenticated() && 
+                     (isOwner(resource.data.userId) || isVRSpecialist() || isAdmin());
+      allow write: if isVRSpecialist() || isAdmin();
+    }
+    
+    // Job Postings
+    match /job_postings/{jobId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+    
+    // Job Applications
+    match /job_applications/{applicationId} {
+      allow read: if isAuthenticated() && 
+                     (isOwner(resource.data.userId) || isAdmin());
+      allow create: if isAuthenticated();
+      allow update: if isOwner(resource.data.userId) || isAdmin();
+      allow delete: if isOwner(resource.data.userId) || isAdmin();
+    }
+    
+    // Communication Preferences
+    match /communication_preferences/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId);
+    }
+    
+    // ASL Videos
+    match /asl_videos/{videoId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+    
+    // Default deny all other access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
