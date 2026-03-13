@@ -1,19 +1,19 @@
 PinkFlow Agents & AI System
 
-This document describes the agent and AI system architecture within the PinkFlow ecosystem.
+This document describes the agent and AI system architecture within the Magicians ecosystem.
 
 ---
 
 ## 🤖 Overview
 
-PinkFlow integrates AI-driven agents through the **360Magicians** suite, providing intelligent automation and assistance across the business lifecycle: **Idea → Build → Grow → Managed**.
+PinkFlow integrates AI-driven agents through the **Magiciancore** layer, providing intelligent automation and assistance across the business lifecycle: **Idea → Build → Grow → Managed**.
 
 ---
 
 ## 📋 Table of Contents
 
 - [Agent Architecture](#agent-architecture)
-- [360Magicians Suite](#360magicians-suite)
+- [MagicianCore](#360magicians-suite)
 - [Agent Types](#agent-types)
 - [Integration Points](#integration-points)
 - [Workflow Automation](#workflow-automation)
@@ -29,11 +29,11 @@ PinkFlow integrates AI-driven agents through the **360Magicians** suite, providi
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    PinkFlow Ecosystem                        │
+│                    MAGICIAN Ecosystem                        │
 │                                                              │
 │  ┌────────────┐  ┌────────────┐  ┌────────────┐           │
 │  │  Frontend  │  │  Backend   │  │  Workflow  │           │
-│  │   (React)  │  │  (FastAPI) │  │   System   │           │
+│  │   (HMTX)  │  │  (Flask) │  │   System   │           │
 │  └─────┬──────┘  └─────┬──────┘  └─────┬──────┘           │
 │        │               │               │                    │
 │        └───────────────┴───────────────┘                    │
@@ -41,12 +41,12 @@ PinkFlow integrates AI-driven agents through the **360Magicians** suite, providi
 │                        ▼                                     │
 │              ┌──────────────────┐                          │
 │              │   AI Proxy       │                          │
-│              │  (Gemini API)    │                          │
+│              │  (MAGICIAN API)    │                          │
 │              └────────┬─────────┘                          │
 │                       │                                     │
 │                       ▼                                     │
 │         ┌─────────────────────────────┐                   │
-│         │     360Magicians Suite      │                   │
+│         │     MagicianCore      │                   │
 │         ├─────────────────────────────┤                   │
 │         │  • Business Agents          │                   │
 │         │  • Workflow Agents          │                   │
@@ -512,8 +512,8 @@ project_context = {
     'reason': 'Restructuring for Deaf-First architecture',
     'custom_agents': [
         'accessibility-analyzer',
-        'deaf-first-architect',
-        'sign-language-integration'
+        'architect-ai',
+        'deafauth-integration'
     ]
 }
 
@@ -647,7 +647,7 @@ def create_project_intake_workflow():
 ```python
 # New project with minimal code
 result = await onboard_project(
-    repo_url="https://github.com/user/new-project",
+    repo_url="https://github.com/mbtq-dev/new-project",
     source="clone"
 )
 
@@ -665,7 +665,7 @@ result = await onboard_project(
 ```python
 # Well-established project needing features
 result = await onboard_project(
-    repo_url="https://github.com/user/established-project",
+    repo_url="https://github.com/mbtq-dev/established-project",
     source="fork"
 )
 
@@ -683,7 +683,7 @@ result = await onboard_project(
 ```python
 # Project needs architecture refinement before building
 result = await onboard_project(
-    repo_url="https://github.com/user/refactor-project",
+    repo_url="https://github.com/mbtq-dev/refactor-project",
     source="fork"
 )
 
@@ -777,7 +777,7 @@ async def test_custom_agent():
 ### Best Practices
 
 1. **API Key Management**
-   - Store keys in environment variables
+   - Store keys in Server side
    - Use secure backend proxy
    - Never expose keys in frontend
 
@@ -803,7 +803,7 @@ async def test_custom_agent():
 import os
 
 AGENT_CONFIG = {
-    "gemini_api_key": os.getenv("GEMINI_API_KEY"),
+    "magician_api_key": os.getenv("magician_API_KEY"),
     "max_retries": 3,
     "timeout": 30,
     "rate_limit": 100,  # requests per minute
@@ -850,8 +850,8 @@ async def execute_agent(agent_name: str, params: dict):
 
 ```bash
 # .env
-GEMINI_API_KEY=your_api_key_here
-AGENT_BACKEND_URL=https://api.pinkflow.dev
+Magician_API_KEY=your_api_key_here
+AGENT_BACKEND_URL=https://api.360magicians.com
 AGENT_TIMEOUT=30
 AGENT_MAX_RETRIES=3
 ENABLE_AGENT_CACHING=true
@@ -899,11 +899,11 @@ spec:
       - name: agents
         image: pinkflow/agents:latest
         env:
-        - name: GEMINI_API_KEY
+        - name: MAGiCIAN_API_KEY
           valueFrom:
             secretKeyRef:
               name: agent-secrets
-              key: gemini-api-key
+              key: magician-api-key
         resources:
           requests:
             memory: "256Mi"
