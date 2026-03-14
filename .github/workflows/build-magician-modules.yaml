@@ -1,0 +1,6 @@
+- name: Build Magician Modules
+  run: |
+    docker build -t business-magician ./magicians/business
+    docker build -t job-magician ./magicians/job
+    docker build -t creative-magician ./magicians/creative
+    docker build -t developer-magician ./magicians/developer
