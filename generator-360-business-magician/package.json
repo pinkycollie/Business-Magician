@@ -1,12 +1,12 @@
 {
-  "name": "generator-360-business-magician",
+  "name": "generator-magician",
   "version": "1.0.0",
-  "description": "Yeoman generator for 360 Business Magician components and features",
-  "homepage": "https://github.com/pinksync/360-business-magician-generator",
+  "description": "Yeoman generator for Magician components and features",
+  "homepage": "https://github.com/pinkycollie/pinkyai/magician-generator",
   "author": {
-    "name": "PinkSync",
-    "email": "team@pinksync.com",
-    "url": "https://pinksync.com"
+    "name": "PinkyAI",
+    "email": "pinkycollie@outlook.com",
+    "url": "https://pinkyai.mbtq.dev"
   },
   "files": [
     "generators"
@@ -32,15 +32,15 @@
     "yosay": "^2.0.2"
   },
   "engines": {
-    "npm": ">= 4.0.0"
+    "node": ">= 8.0.0"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pinksync/360-business-magician-generator.git"
+    "url": "https://github.com/pinkycollie/pinkyai/magician-generator.git"
   },
   "scripts": {
-    "test": "npm test",
-    "prepublishOnly": "npm test"
+    "test": "jest test",
+    "prepublishOnly": "pre-commit"
   }
 }
